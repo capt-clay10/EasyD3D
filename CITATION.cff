@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: EasyD3D: A GUI for representative period identification and integration with Delft3D for German North Sea modelling
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: Software
+authors:
+  - given-names: Clayton Cyril
+    family-names: Soares
+    email: clayton.soares@ifg.uni-kiel.de
+    orcid: 'https://orcid.org/0000-0001-6780-2305'
+    affiliation: 'CAU, Kiel'
+  - given-names: Arne
+    family-names: Knies
+    email: arne.knies@ifg.uni-kiel.de
+    affiliation: 'CAU, Kiel'
+identifiers:
+  - type: URL
+    value: >-
+      https://github.com/capt-clay10/EasyGSH-and-Delft3d-companion.git
+abstract: >-
+  Extracts data (water level and wave, S-T varying) from
+  provided EasyGSH dataset and writes it into Delft3D
+  readable boundary condition file format. Additionally, it can identify representative periods by wind
+  based on the algorithm defined by Soares et al. (2024) 
+keywords:
+  - EasyGSH
+  - COSMO
+  - Delft3D4
+  - BCW and BCT file generator
+  - Representative period
+license: MIT
+date-released: '2024-07-01'
