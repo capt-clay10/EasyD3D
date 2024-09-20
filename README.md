@@ -1,12 +1,11 @@
-# Generate/alter input/boundary condition files for Delft3D4 using the EasyGSH and COSMO datasets
-# Identify representative period by wind (Soares et al., 2024)
-# Use the standalone GUI EasyD3D or run the main.py file
+# Identify an unfiltered-reduced-representative period and extract associated input boundary conditions for Delft3D
+
+*The GUI is adapted to EasyGSH and COSMO for extraction but the source code can be adapted to other datasets.
 
 Source of easygsh data  **https://mdi-de.baw.de/easygsh/Easy_Viewer_syn.html#home**
-
 Citations for using EasyGSH data : **Hagen, R., Plüß, A., Schrage, N., Dreier, N. (2020): EasyGSH-DB: Themengebiet - synoptische Hydrodynamik. Bundesanstalt für Wasserbau. https://doi.org/10.48437/02.2020.K2.7000.0004**
 
-Please read the source document to understand how these datasets are generated. Here are some quick points.
+Please read the source document to understand how EasyGSH datasets are generated. Here are some quick points.
 * The data provided are the results of a numerical simulation gridded over 1km and provided every 20 minutes. 
 * The numerical modelling approach used to generate the data utilizes annually updated bathymetry, tidal dynamics simulated by the Untrim2 modelling system, using tidal constituents at the open boundaries (corrected for external surge), waves computed using a combination of the model UnK (Schneggenburger et al., 2000) and SWAN for near-shore physical processes. **This code does not extract SWAN-generated data**
 
@@ -14,10 +13,10 @@ Source for COSMO data **https://opendata.dwd.de/climate_environment/REA/COSMO_RE
 
 Citations for using COMSO : **Bollmeyer, C., Keller, J.D., Ohlwein, C., Wahl, S., Crewell, S., Friederichs, P., Hense, A., Keune, J., Kneifel, S., Pscheidt, I., Redl, S., Steinke, S., 2015. Towards a high‐resolution regional reanalysis for the European CORDEX domain. Q.J.R. Meteorol. Soc. 141, 1–15. https://doi.org/10.1002/qj.2486**
 
-Citation for using Representative period algorithm (source paper): **Soares, C. C., Galiforni-Silva, F., & Winter, C. (2024). Representative residual transport pathways in a mixed-energy open tidal system. Journal of Sea Research, 102530**
+Citation for using Representative period algorithm (source paper): **Soares, C.C., Galiforni-Silva, F., Winter, C., 2024. Representative residual transport pathways in a mixed-energy open tidal system. Journal of Sea Research 201, 102530. https://doi.org/10.1016/j.seares.2024.102530**
 
 **What does this code do?**
-1) Identify Representative period based on wind data
+1) Identify Representative period based on wind data (all-class correlation and selective-class correlation)
 2) Extract time-series water level 2D information for any designed boundaries within the EasyGSH model domain  (data found under the synoptic simulation, UnTRIM2, 1000m grid section.)
 3) Extract time series wave/Sea-state data 2D (significant height, peak period, direction, directional spread) for any designed boundaries within the EasyGSH model domain (data found under the synoptic simulation, UnTRIM2, 1000m grid section.)
 4) Extract spatial wind and pressure fields and create Delft3D-compatible wind files. 
@@ -63,7 +62,7 @@ Citation for using Representative period algorithm (source paper): **Soares, C. 
 
 * Snippet of the GUI
 
-![GUI_start_page](https://github.com/user-attachments/assets/035839f8-74c9-4c21-9359-44300b14f366)
+![GUI_start_page](https://github.com/user-attachments/assets/1209f3da-d7ab-487d-9d61-251eff6d8d4a)
 
 ### Information about the BCW file
 
